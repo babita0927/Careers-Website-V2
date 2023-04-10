@@ -9,19 +9,25 @@
       #banner{
         width: 100%;
         height : 360px;
+        margin-bottom : 16px;
       }
     </style>
   </head>
   <body>
     {% include 'nav.html' %}
+     <img class='img-fluid' id='banner' src="https://careers-website.babitapatel1.repl.co/static/career.jpg"  height="320"/>
     <div class='container'>
     <h1 class='text-center mt-2 mb-4'>{{company_name}} Careers</h1>
-    <img class='img-fluid' id='banner' src="https://careers-website.babitapatel1.repl.co/static/career.jpg"  height="320"/>
-      <h1 class='text-center'>About Careers</h1>
+   <div class ="row" style =" margin-bottom: 16px;">
+    <div class ="col-md-6">  
     <p class='lead'>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-
+       </div>
+      <div class ="d-none d-md-block col-md-5" >
+        <img src = "/static/people.jpeg" style = " height: 320px; width : 520px; border-radius : 5px;">
+      </div>
+   
   <h2 class='text-center mt-2 mb-4'>Open Positions</h2>
     <p>{% for job in jobs %}
       
