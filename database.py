@@ -30,3 +30,6 @@ def load_jobs_from_db(id):
 
     else:
       return rows[0]._asdict()
+
+
+#def add_application(job_id,application):
