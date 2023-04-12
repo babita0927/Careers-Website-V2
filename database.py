@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, text
-import pymssql
+import pymysql
 import os
 
 db_connection = os.environ['DB_CONNECTION']
