@@ -4,6 +4,11 @@
     <title>Application Submitted</title>
     {% include 'bootstrap.html' %}
   </head>
+  <style>
+    h5{
+      font-family : Calibri;
+    }
+  </style>
   <body>
     {% include 'nav.html' %}
 
@@ -11,24 +16,24 @@
 
     <div class='container'>
       
-    <p>Your application for the role of <b>{{job['title']}}</b> at ABC Careers has been submitted.</p>
+    <p style ="color: green;">Your application for the role of <b>{{job['title']}}</b> at ABC Careers has been submitted.</p></br>
 
-       <h4> Full Name  </h4>
+       <h5> Full Name  </h5>
       <div class = 'mb-2'> {{apply['full_name']}}</div>
 
-       <h4> Email  </h4>
+       <h5> Email  </h5>
       <div class = 'mb-2'> {{apply['email']}}</div>
 
-       <h4> LinkedIn URL  </h4>
+       <h5> LinkedIn URL  </h5>
       <div class = 'mb-2'> {{apply['linkedin_url']}}</div>
 
-       <h4> Education  </h4>
+       <h5> Education  </h5>
       <div class = 'mb-2'> {{apply['education']}}</div>
 
-       <h4> Work Experience </h4>
+       <h5> Work Experience </h5>
       <div class = 'mb-2'> {{apply['work_experience']}}</div>
 
-      <h4> Resume URL </h4>
+      <h5> Resume URL </h5>
       <div class = 'mb-2'> {{apply['resume_url']}}</div>
       <a href ="/"> Back </a>
       
