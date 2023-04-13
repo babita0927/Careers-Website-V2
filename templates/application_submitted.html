@@ -11,7 +11,25 @@
 
     <div class='container'>
       
-    <h1 class='text-center mt-2 mb-4'>Your application has been submitted successfully</h1>
+    <p>Your application for the role of <b>{{job['title']}}</b> at ABC Careers has been submitted.</p>
+
+       <h4> Full Name  </h4>
+      <div class = 'mb-2'> {{apply['full_name']}}</div>
+
+       <h4> Email  </h4>
+      <div class = 'mb-2'> {{apply['email']}}</div>
+
+       <h4> LinkedIn URL  </h4>
+      <div class = 'mb-2'> {{apply['linkedin_url']}}</div>
+
+       <h4> Education  </h4>
+      <div class = 'mb-2'> {{apply['education']}}</div>
+
+       <h4> Work Experience </h4>
+      <div class = 'mb-2'> {{apply['work_experience']}}</div>
+
+      <h4> Resume URL </h4>
+      <div class = 'mb-2'> {{apply['resume_url']}}</div>
       <a href ="/"> Back </a>
       
     </div>
