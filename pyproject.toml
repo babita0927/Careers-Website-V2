@@ -10,6 +10,8 @@ Flask = "^2.2.3"
 pymssql = "^2.2.7"
 SQLAlchemy = "^2.0.9"
 pymysql = "^1.0.3"
+Flask-WTF = "^1.1.1"
+WTForms = "^3.0.1"
 
 [tool.poetry.dev-dependencies]
 

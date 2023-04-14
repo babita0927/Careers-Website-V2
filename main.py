@@ -49,15 +49,5 @@ def about():
   return render_template('about.html')
 
 
-@app.route('/featured_job')
-def feature():
-  return render_template('featured_job.html')
-
-
-@app.route('/pricing')
-def pricing():
-  return render_template('pricing.html')
-
-
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
