@@ -25,6 +25,14 @@ def show_job(id):
     return render_template('jobpage.html', job=job)
 
 
+@app.route('/job/<id>/apply', methods=['POST'])
+def apply_to_job(id):
+  job = load_jobs_from_db(id)
+  data = request.form
+  add_application(id, data)
+  return render_template('application_submitted.html', apply=data, job=job)
+
+
 @app.route('/aboutus')
 def about():
   return render_template('about.html')
