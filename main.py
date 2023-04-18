@@ -1,5 +1,5 @@
-from flask import Flask, render_template, jsonify, request
-from database import load_jobs_db, load_jobs_from_db, add_application
+from flask import Flask, render_template, jsonify, request, url_for, redirect
+from database import load_jobs_db, load_jobs_from_db, add_application, save_contactus
 
 app = Flask(__name__)
 
@@ -8,6 +8,33 @@ app = Flask(__name__)
 def home():
   jobs = load_jobs_db()
   return render_template('home.html', jobs=jobs)
+
+
+@app.route('/contact')
+def contact():
+  return render_template('contact.html')
+
+
+@app.route('/contactus', methods=['POST'])
+def contactsave():
+  data = request.form
+  save_contactus(data)
+  return redirect(url_for('hom'))
+
+
+@app.route('/login')
+def employer_log():
+  return render_template('login.html')
+
+
+@app.route('/forgot')
+def forgot():
+  return render_template('forgot_password.html')
+
+
+@app.route('/create_account')
+def create_account():
+  return render_template('create_account.html')
 
 
 @app.route('/api/jobs')

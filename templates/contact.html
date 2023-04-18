@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ABC Careers</title>
+     {% include 'bootstrap.html' %}
+  </head>
+<style>
+  .txt{
+    width : 500px;
+  }
+  textarea {
+    height: 200px; /* Set a fixed height for the textarea */
+  }
+  label{
+    font-family: Calibri;
+  }
+  span {
+    color : red;
+  }
+  .center-div {
+    width: 50%; /* Set a fixed width for the div */
+    margin: 0 auto; /* Set the margin to center horizontally */
+  }
+</style>
+  <body>
+     {% include 'nav.html' %}
+
+    {% include 'banner.html' %}
+
+    <div class='container'>
+      
+    <h1 class='text-center mt-2 mb-4'>Contact Us</h1>
+
+    <div class = "center-div">
+<form action = "/contactus" method = "post">
+ 
+
+  <div class ='mb-2'>
+  <label> Full Name</label><br>
+  <input type = "text" name = "full_name" class= 'txt'  required><span> *</span>
+    
+ </div>
+
+  <div class = 'mb-2'>
+  <label> Email</label><br>
+  <input type = "text" name = "email" class= 'txt' required><span> *</span>
+  </div>
+
+  <div class ='mb-2'>
+  <label> Message</label><br>
+  <textarea  name = "message" class= 'txt'  required></textarea><span> *</span>
+    </div>
+
+</br>
+  <center><input type ="submit" class='btn btn-primary btn-lg' value= "Send Message" ></center>
+
+</form>
+</div>
+
+
+    </div>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

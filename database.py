@@ -46,3 +46,15 @@ def add_application(job_id, data):
         'work_experience': data['work_experience'],
         'resume_url': data['resume_url'],
       })
+
+
+def save_contactus(data):
+  with engine.connect() as conn:
+    conn.execute(
+      text(
+        "INSERT INTO contact(full_name,message,email) VALUES (:full_name, :message,:email)"
+      ), {
+        'full_name': data['full_name'],
+        'email': data['email'],
+        'message': data['message'],
+      })
