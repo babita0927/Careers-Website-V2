@@ -1,6 +1,6 @@
 # Careers-Website
 
-ABC Career is a job website built using the Replit platform and MySQL database. The website allows employers to post job vacancies and job seekers to search and apply for jobs. The project was developed as part of a web development course.
+ABC Career is a job website built using the Replit platform and MySQL database. The website allows employers to post job vacancies and job seekers to search and apply for jobs. The project was developed as part of a AI course.
 
 Features
 The website includes the following features:
@@ -19,7 +19,7 @@ The following technologies were used to develop the project:
 4. Bootstrap
 
 Contributors : 
-The project was developed by Babita Patel as part of the web development course.
+The project was developed by Babita Patel as part of the AI course.
 
 License :
 This project is licensed under the MIT License - see the LICENSE.md file for details.
