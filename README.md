@@ -13,13 +13,13 @@ The website includes the following features:
 Technologies Used
 The following technologies were used to develop the project:
 
-1.HTML
-2.CSS
-3.MySQL
-4.Bootstrap
+1. HTML
+2. CSS
+3. MySQL
+4. Bootstrap
 
-Contributors
+Contributors : 
 The project was developed by Babita Patel as part of the web development course.
 
-License
+License :
 This project is licensed under the MIT License - see the LICENSE.md file for details.
