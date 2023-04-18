@@ -13,10 +13,12 @@ The website includes the following features:
 ## Technologies Used:
 The following technologies were used to develop the project:
 
-1. HTML
-2. CSS
-3. MySQL
-4. Bootstrap
+1. Python
+2. HTML
+3. CSS
+4. MySQL
+5. Bootstrap
+6. Flask
 
 ## Contributors : 
 The project was developed by Babita Patel as part of the AI course.
