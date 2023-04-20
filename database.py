@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, text
 import pymysql
 import os
+from flask_mail import Mail, Message
 
 db_connection = os.environ['DB_CONNECTION']
 engine = create_engine(db_connection,
@@ -58,3 +59,17 @@ def save_contactus(data):
         'email': data['email'],
         'message': data['message'],
       })
+
+
+def adminlogin(data):
+  with engine.connect() as conn:
+    result = conn.execute(
+      text("SELECT * FROM admin_log WHERE uid=:username AND pass=:password"), {
+        'username': data['username'],
+        'password': data['password']
+      })
+    admin = result.fetchone()
+    if admin is not None:
+      return "true"
+    else:
+      return "false"

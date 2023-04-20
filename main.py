@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request, url_for, redirect
-from database import load_jobs_db, load_jobs_from_db, add_application, save_contactus
+from database import load_jobs_db, load_jobs_from_db, add_application, save_contactus, adminlogin
 
 app = Flask(__name__)
 
@@ -19,22 +19,27 @@ def contact():
 def contactsave():
   data = request.form
   save_contactus(data)
-  return redirect(url_for('hom'))
+  return redirect(url_for('home'))
 
 
 @app.route('/login')
 def employer_log():
   return render_template('login.html')
 
-
-@app.route('/forgot')
-def forgot():
-  return render_template('forgot_password.html')
-
-
 @app.route('/create_account')
 def create_account():
   return render_template('create_account.html')
+
+
+@app.route('/adminlogin', methods=['POST'])
+def adminlog():
+  data = request.form
+  result = adminlogin(data)
+  if result == "true":
+    return render_template('adminhome.html')
+  else:
+    return render_template('login.html',
+                           error_msg="Invalid username or password")
 
 
 @app.route('/api/jobs')
