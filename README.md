@@ -5,7 +5,7 @@ ABC Career is a job website built using the Replit platform and MySQL database. 
 ## Features:
 The website includes the following features:
 
-1. Employers can sign up and post job vacancies.
+1. Employers can post job vacancies.
 2. Job seekers can search and apply for jobs.
 3. Employers can view and manage job applications.
 4. Job seekers can view the status of their job applications.
