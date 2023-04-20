@@ -1,7 +1,6 @@
 from sqlalchemy import create_engine, text
 import pymysql
 import os
-from flask_mail import Mail, Message
 
 db_connection = os.environ['DB_CONNECTION']
 engine = create_engine(db_connection,
