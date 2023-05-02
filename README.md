@@ -1,6 +1,6 @@
 # Careers-Website
 
-ABC Career is a job website built using the Replit platform and MySQL database. The website allows employers to post job vacancies and job seekers to search and apply for jobs. The project was developed as part of a AI course.
+ABC Career is a job website built using the Replit platform and MySQL database. The website allows employers to post job vacancies and job seekers to search and apply for jobs. The project was developed as part of Python Module AI course.
 
 ## Features:
 The website includes the following features:
