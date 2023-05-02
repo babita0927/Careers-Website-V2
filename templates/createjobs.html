@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Job</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+		form {
+			background-color: #fff;
+			margin: 0 auto;
+			max-width: 600px;
+			padding: 20px;
+			box-shadow: 0px 0px 10px #ccc;
+		}
+		label {
+			display: block;
+			margin-top: 10px;
+		}
+		input[type=text], select, textarea {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			margin-top: 6px;
+			margin-bottom: 16px;
+			resize: vertical;
+			font-size: 16px;
+		}
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+			float: right;
+		}
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.container label {
+			flex-basis: calc(50% - 10px);
+			max-width: calc(50% - 10px);
+		}
+		@media screen and (max-width: 600px) {
+			.container label {
+				flex-basis: 100%;
+				max-width: 100%;
+			}
+		}
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Create Job</h1>
+	<form method="post" action="/insertjobs">
+		<div class="container">
+			<label for="jobtitle">Job Title<span class="error">*</span></label>
+			<input type="text" id="jobtitle" name="jobtitle" required pattern="[a-zA-Z\s]{3,}" title="Please enter a valid job title (at least 3 letters)">
+			<label for="location">Location<span class="error">*</span></label>
+			<input type="text" id="location" name="location" required pattern="[a-zA-Z\s]{3,}" title="Please enter a valid location (at least 3 letters)">
+			<label for="salary">Salary<span class="error">*</span></label>
+			<input type="text" id="salary" name="salary" required pattern="^\d{1,9}(\.\d{1,2})?$" title="Please enter a valid salary (e.g. 10000 or 10000.00)">
+			<label for="currency">Currency<span class="error">*</span></label>
+			<select id="currency" name="currency" required>
+				<option value="">Please select</option>
+				<option value="USD">USD</option>
+				<option value="EUR">EUR</option>
+				<option value="GBP">GBP</option>
+				<option value="AUD">AUD</option>
+			</select>
+<label for="responsibilities">Responsibilities<span class="error">*</span></label>
+		<textarea id="responsibilities" name="responsibilities" required minlength="10" title="Please enter at least 10 characters"></textarea>
+		<label for="requirements">Requirements<span class="error">*</span></label>
+		<textarea id="requirements" name="requirements" required minlength="10" title="Please enter at least 10 characters"></textarea>
+		<input type="submit" value="Submit">
+	</div>
+</form>
+</body>
+</html>

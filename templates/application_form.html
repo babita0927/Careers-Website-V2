@@ -13,41 +13,42 @@
   
 </style>
 <div>
-<form action = "/job/{{job['id']}}/apply" method = "post">
- 
+<form action="/job/{{job['id']}}/apply" method="post" enctype="multipart/form-data">
 
-  <div class ='mb-2'>
-  <label> Full Name</label><br>
-  <input type = "text" name = "full_name" class= 'txt' placeholder = "John Carthy" required><span> *</span>
-    
- </div>
-
-  <div class = 'mb-2'>
-  <label> Email</label><br>
-  <input type = "text" name = "email" class= 'txt' placeholder = "john@carthy.com" required><span> *</span>
+  <div class='mb-2'>
+    <label>Full Name</label><br>
+    <input type="text" name="full_name" class='txt' placeholder="John Carthy" required pattern="[A-Za-z]+" maxlength="20"><span> *</span>
   </div>
 
-  <div class ='mb-2'>
-  <label> LinkedIn URL</label><br>
-  <input type = "text" name = "linkedin_url" class= 'txt' placeholder = "https://linked.con/on/johncarthy" required><span> *</span>
-    </div>
+  <div class='mb-2'>
+    <label>Email</label><br>
+    <input type="email" name="email" class='txt' placeholder="john@carthy.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><span> *</span>
+  </div>
 
-   <div class ='mb-2'>
-  <label> Education</label><br>
- <textarea name = "education" class= 'txt' placeholder = "B.Tech" required></textarea><span> *</span>
-    </div>
+  <div class='mb-2'>
+    <label>LinkedIn URL</label><br>
+    <input type="text" name="linkedin_url" class='txt' placeholder="https://linked.con/on/johncarthy" required><span> *</span>
+  </div>
 
-     <div class ='mb-2'>
-  <label> Work Experience</label><br>
- <textarea name = "work_experience" class= 'txt' placeholder = "Python" required></textarea><span> *</span>
-    </div>
+  <div class='mb-2'>
+    <label>Education</label><br>
+    <textarea name="education" class='txt' placeholder="B.Tech" required pattern="[A-Za-z]+" maxlength="20"></textarea><span> *</span>
+  </div>
 
-    <div class ='mb-2'>
-  <label> Resume URL</label><br>
-  <input type = "text" name = "resume_url" class= 'txt' placeholder = "https://john-resume" required><span> *</span>
-    </div>
-</br>
-  <input type ="submit" >
+  <div class='mb-2'>
+    <label>Work Experience</label><br>
+    <textarea name="work_experience" class='txt' placeholder="Python" required pattern="[A-Za-z]+" maxlength="20"></textarea><span> *</span>
+  </div>
+
+  <div class='mb-2'>
+    <label>Resume</label><br><span> *</span>
+    <input type="file" name="file" id="file" required>
+    
+  </div>
+  
+
+  <input type="submit">
 
 </form>
+
 </div>

@@ -4,6 +4,11 @@
     <title>ABC Careers</title>
      {% include 'bootstrap.html' %}
   </head>
+  <style>
+    span {
+    color : red;
+  }
+  </style>
 
   <body>
      {% include 'nav.html' %}
@@ -37,6 +42,7 @@
    <p>{{job.currency}}{{job.salary}}</p>
 
     {% include 'application_form.html' %}
+      <div id="message"><span>{{ message }}</span></div>
       
     </div>
 

@@ -37,18 +37,18 @@
 
   <div class ='mb-2'>
   <label> Full Name</label><br>
-  <input type = "text" name = "full_name" class= 'txt'  required><span> *</span>
+  <input type = "text" name = "full_name" class= 'txt'  required pattern="[A-Za-z]+"><span> *</span>
     
  </div>
 
   <div class = 'mb-2'>
   <label> Email</label><br>
-  <input type = "text" name = "email" class= 'txt' required><span> *</span>
+  <input type = "email" name = "email" class= 'txt' required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><span> *</span>
   </div>
 
   <div class ='mb-2'>
   <label> Message</label><br>
-  <textarea  name = "message" class= 'txt'  required></textarea><span> *</span>
+  <textarea  name = "message" class= 'txt'  required pattern="[A-Za-z]+" maxlength="200"></textarea><span> *</span>
     </div>
 
 </br>

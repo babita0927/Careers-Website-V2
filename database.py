@@ -32,7 +32,7 @@ def load_jobs_from_db(id):
       return rows[0]._asdict()
 
 
-def add_application(job_id, data):
+def add_application(job_id, data, file_path):
   with engine.connect() as conn:
     conn.execute(
       text(
@@ -44,7 +44,7 @@ def add_application(job_id, data):
         'linkedin_url': data['linkedin_url'],
         'education': data['education'],
         'work_experience': data['work_experience'],
-        'resume_url': data['resume_url'],
+        'resume_url': file_path,
       })
 
 
@@ -72,3 +72,18 @@ def adminlogin(data):
       return "true"
     else:
       return "false"
+
+def insertjobs(data):
+  with engine.connect() as conn:
+    conn.execute(
+      text(
+        "INSERT INTO jobs(title,location,salary,currency,responsibilities,requirements) VALUES (:jobtitle, :location,:salary,:currency,:responsibilities,:requirements)"
+      ), {
+        'title': data['jobtitle'],
+        'location': data['location'],
+        'salary': data['salary'],
+         'currency': data['currency'],
+        'responsibilities': data['responsibilities'],
+        'requirements': data['requirements'],
+      })
+  

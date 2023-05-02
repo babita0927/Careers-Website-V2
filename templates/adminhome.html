@@ -1,1 +1,64 @@
-<p> Admin Home</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Navigation Bar Example</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		nav {
+			background-color: #333;
+			overflow: hidden;
+		}
+		nav a {
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		nav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+		.active {
+			background-color: #4CAF50;
+			color: white;
+		}
+		.content {
+			padding: 16px;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<a class="active" href="#">Home</a>
+		<a href="/createjobs">Create Jobs</a>
+		<a href="/showallapp">Show Applications</a>
+		<a href="/logout">Logout</a>
+	</nav>
+	<div class="content">
+		
+		<h4>Hello {{data['username']}}! Welcome to the Admin Section</h4>
+	</div>
+	<script>
+		var links = document.getElementsByTagName("a");
+		for (var i = 0; i < links.length; i++) {
+			links[i].addEventListener("click", function(event) {
+				event.preventDefault();
+				var href = this.getAttribute("href");
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == 4 && xhr.status == 200) {
+						document.querySelector(".content").innerHTML = xhr.responseText;
+					}
+				};
+				xhr.open("GET", href, true);
+				xhr.send();
+			});
+		}
+	</script>
+</body>
+</html>
